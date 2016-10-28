@@ -1,0 +1,11 @@
+#class path
+.classpath
+
+# gradle files
+.gradle/
+
+# project
+.project
+
+#settings
+.settings/

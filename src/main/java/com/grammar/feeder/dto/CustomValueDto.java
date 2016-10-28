@@ -1,0 +1,24 @@
+package com.grammar.feeder.dto;
+
+import java.util.Date;
+
+public class CustomValueDto {
+
+	private String name;
+	
+	private Date date;
+
+	public CustomValueDto(String name, Date date) {
+		this.name = name;
+		this.date = date;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+	
+}
