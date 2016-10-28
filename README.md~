@@ -20,5 +20,4 @@ Technologies:
 1. JDK 1.7 
 2. Spring boot 
 3. Mongo DB
-4. Rabbit MQ
-5. Docker
+4. Docker
