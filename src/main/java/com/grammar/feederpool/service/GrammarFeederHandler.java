@@ -1,4 +1,4 @@
-package com.grammer.feederpool.service;
+package com.grammar.feederpool.service;
 
 import org.springframework.stereotype.Service;
 
