@@ -14,8 +14,6 @@ import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
 
 import com.grammar.feederpool.consumer.GrammarConsumer;
-import com.grammar.feederpool.service.GrammarFeederHandler;
-import com.grammar.feederpool.service.GrammarPoolHandler;
 
 @SpringBootApplication
 @EnableRabbit
