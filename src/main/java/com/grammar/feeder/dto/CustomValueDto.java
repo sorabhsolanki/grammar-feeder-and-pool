@@ -20,5 +20,10 @@ public class CustomValueDto {
 	public Date getDate() {
 		return date;
 	}
+
+    @Override
+    public String toString(){
+        return "Custom value : " + name + " and date : " + date;
+    }
 	
 }

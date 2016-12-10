@@ -25,5 +25,11 @@ public class BaseFeederDto {
 	public CustomValueDto getCustomDto() {
 		return customDto;
 	}
+
+	@Override
+	public String toString(){
+		return "Feeding Key : " + key + " with Value : " + value +
+                " with custom value as : " + customDto;
+	}
 	
 }

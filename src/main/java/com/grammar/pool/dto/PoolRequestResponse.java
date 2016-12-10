@@ -18,4 +18,9 @@ public class PoolRequestResponse {
 	public String getValue() {
 		return value;
 	}
+
+	@Override
+    public String toString(){
+        return "Requesting Key : " + key + " Value received : " + value;
+    }
 }
