@@ -1,4 +1,5 @@
 import com.grammar.feederpool.consumer.GrammarConsumer;
+import com.grammar.repository.CommonGrammarDbReader;
 import com.grammar.util.QueueRouteTopicDeclaration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,11 @@ public class GrammarMain implements RabbitListenerConfigurer{
 
 	@Autowired
 	QueueRouteTopicDeclaration queueRouteTopicDeclaration;
-	
+
+	//TODO: remove below lines, these are used to test db connection
+	@Autowired
+	static CommonGrammarDbReader grammarDbReader;
+
 	@Bean
 	public MappingJackson2MessageConverter jackson2MessageConverter(){
 		MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();

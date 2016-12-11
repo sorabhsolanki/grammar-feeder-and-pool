@@ -17,3 +17,5 @@ build/
 # idea files
 .idea/
 *.iml
+*.ipr
+*.iws
