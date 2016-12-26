@@ -12,12 +12,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
 
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableRabbit
+@EnableMongoRepositories
 @ComponentScan()
 public class GrammarMain implements RabbitListenerConfigurer{
 
@@ -29,7 +31,7 @@ public class GrammarMain implements RabbitListenerConfigurer{
 	@Autowired
 	QueueRouteTopicDeclaration queueRouteTopicDeclaration;
 
-	//TODO: remove below lines, these are used to test db connection
+    // dbreader to read common grammar key value from DB and feed it to common pool
 	@Autowired
 	static CommonGrammarDbReader grammarDbReader;
 
@@ -52,7 +54,7 @@ public class GrammarMain implements RabbitListenerConfigurer{
 	}
 	
 	public static void main(String[] args) {
-		LOG.info("============= From main program ===========");
-		SpringApplication.run(GrammarMain.class, args);
+        LOG.info("============= From main program ===========");
+        SpringApplication.run(GrammarMain.class, args);
 	}
 }

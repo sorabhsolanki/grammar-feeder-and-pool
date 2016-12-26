@@ -1,28 +1,35 @@
 package com.grammar.repository;
 
+import com.grammar.repository.entity.CommonWord;
+import com.mongodb.DBCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.util.List;
 
-@Repository
+@Component
 public class CommonGrammarDbReader {
 
     private static final Logger LOG = LoggerFactory.getLogger(CommonGrammarDbReader.class);
+    public static final String GRAMMAR = "grammar";
 
-    private final DatabaseConnection connection;
+    private CommonWordRepository commonWordRepository;
 
     @Autowired
-    public CommonGrammarDbReader(DatabaseConnection connection){
-        this.connection = connection;
-        read();
+    public CommonGrammarDbReader(CommonWordRepository commonWordRepository) {
+        this.commonWordRepository = commonWordRepository;
+        readDbAndPopulateCommonPool();
+    }
+
+    public void readDbAndPopulateCommonPool(){
+        List<CommonWord> commonWords = commonWordRepository.findAll();
+        LOG.info(commonWords.get(0).toString());
     }
 
 
-    public void read(){
-        Set<String> names = connection.getDB().getCollectionNames();
-        LOG.info("Names of collection =============== : " + names.iterator().next());
-    }
+    //ToDO: add support for executor service so that read from DB can be scheduled and run independently.
 }
