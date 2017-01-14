@@ -1,4 +1,4 @@
-package com.grammar.feeder.dto;
+package com.grammar.feederpool.dto;
 
 import java.util.Date;
 

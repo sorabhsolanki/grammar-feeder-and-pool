@@ -1,6 +1,6 @@
 package com.grammar.feederpool.service;
 
-import com.grammar.feeder.dto.BaseFeederDto;
+import com.grammar.feederpool.dto.BaseFeederDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

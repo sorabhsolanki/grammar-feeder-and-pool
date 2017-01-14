@@ -1,12 +1,12 @@
-package com.grammar.pool.dto;
+package com.grammar.feederpool.dto;
 
-public class PoolRequestResponse {
+public class PoolRequestResponseDto {
 
 	private String key;
 	
 	private String value;
 
-	public PoolRequestResponse(String key, String value) {
+	public PoolRequestResponseDto(String key, String value) {
 		this.key = key;
 		this.value = value;
 	}

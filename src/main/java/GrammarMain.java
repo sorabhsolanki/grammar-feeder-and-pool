@@ -1,5 +1,5 @@
 import com.grammar.feederpool.consumer.GrammarConsumer;
-import com.grammar.repository.CommonGrammarDbReader;
+import com.grammar.repository.CommonGrammarDbReaderManager;
 import com.grammar.util.QueueRouteTopicDeclaration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,14 +26,14 @@ public class GrammarMain implements RabbitListenerConfigurer{
 	private static final Logger LOG = LoggerFactory.getLogger(GrammarMain.class);
 	
 	@Autowired
-	GrammarConsumer grammarConsumer;
+	private GrammarConsumer grammarConsumer;
 
 	@Autowired
-	QueueRouteTopicDeclaration queueRouteTopicDeclaration;
+	private QueueRouteTopicDeclaration queueRouteTopicDeclaration;
 
     // dbreader to read common grammar key value from DB and feed it to common pool
 	@Autowired
-	static CommonGrammarDbReader grammarDbReader;
+	private CommonGrammarDbReaderManager grammarDbReader;
 
 	@Bean
 	public MappingJackson2MessageConverter jackson2MessageConverter(){

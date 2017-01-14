@@ -1,9 +1,9 @@
 package com.grammar.feederpool.consumer;
 
-import com.grammar.feeder.dto.BaseFeederDto;
+import com.grammar.feederpool.dto.BaseFeederDto;
 import com.grammar.feederpool.service.GrammarFeederHandler;
 import com.grammar.feederpool.service.GrammarPoolHandler;
-import com.grammar.pool.dto.PoolRequestResponse;
+import com.grammar.feederpool.dto.PoolRequestResponseDto;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class GrammarConsumer {
 	}
 	
 	@RabbitListener(queues = "grammar-pool-queue")
-	public void receiveMessage(PoolRequestResponse poolRequestResponse){
-		poolHandler.handle(poolRequestResponse);
+	public void receiveMessage(PoolRequestResponseDto poolRequestResponseDto){
+		poolHandler.handle(poolRequestResponseDto);
 	}
 }

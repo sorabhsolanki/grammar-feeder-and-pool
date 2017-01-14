@@ -12,7 +12,6 @@ import java.util.List;
 
 @Repository
 public interface CommonWordRepository extends MongoRepository<CommonWord, String>{
-
     @Override
     public List<CommonWord> findAll();
 }
