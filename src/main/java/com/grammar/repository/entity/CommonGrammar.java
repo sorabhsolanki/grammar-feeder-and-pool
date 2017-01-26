@@ -3,8 +3,8 @@ package com.grammar.repository.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "grammar")
-public class CommonWord {
+@Document(collection = "common_grammar")
+public class CommonGrammar {
 
     @Id
     private String id;
@@ -12,10 +12,10 @@ public class CommonWord {
     private String key;
     private String value;
 
-    public CommonWord() {
+    public CommonGrammar() {
     }
 
-    public CommonWord(String key, String value) {
+    public CommonGrammar(String key, String value) {
         this.key = key;
         this.value = value;
     }

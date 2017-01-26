@@ -1,6 +1,6 @@
 package com.grammar.repository;
 
-import com.grammar.repository.entity.CommonWord;
+import com.grammar.repository.entity.CommonGrammar;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,10 +9,10 @@ import java.util.List;
 public class CommonGrammarDbReaderHelper implements Runnable{
 
     private static final Logger LOG = LoggerFactory.getLogger(CommonGrammarDbReaderHelper.class);
-    private final CommonWordRepository commonWordRepository;
+    private final CommonGrammarRepository commonGrammarRepository;
 
-    public CommonGrammarDbReaderHelper(CommonWordRepository commonWordRepository) {
-        this.commonWordRepository = commonWordRepository;
+    public CommonGrammarDbReaderHelper(CommonGrammarRepository commonGrammarRepository) {
+        this.commonGrammarRepository = commonGrammarRepository;
     }
 
     @Override
@@ -21,8 +21,8 @@ public class CommonGrammarDbReaderHelper implements Runnable{
     }
 
     public void readDbAndPopulateCommonPool(){
-        List<CommonWord> commonWords = commonWordRepository.findAll();
-        LOG.info(commonWords.get(0).toString());
+        List<CommonGrammar> commonGrammars = commonGrammarRepository.findAll();
+        LOG.info(commonGrammars.get(0).toString());
     }
 
 

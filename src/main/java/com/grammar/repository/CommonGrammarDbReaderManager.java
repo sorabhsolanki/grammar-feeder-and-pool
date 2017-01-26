@@ -1,12 +1,10 @@
 package com.grammar.repository;
 
-import com.grammar.repository.entity.CommonWord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -17,13 +15,13 @@ public class CommonGrammarDbReaderManager {
     private static final Logger LOG = LoggerFactory.getLogger(CommonGrammarDbReaderManager.class);
     public static final String GRAMMAR = "grammar";
 
-    private final CommonWordRepository commonWordRepository;
+    private final CommonGrammarRepository commonGrammarRepository;
     private final CommonGrammarDbReaderHelper commonGrammarDbReaderHelper;
 
     @Autowired
-    public CommonGrammarDbReaderManager(CommonWordRepository commonWordRepository) {
-        this.commonWordRepository = commonWordRepository;
-        commonGrammarDbReaderHelper = new CommonGrammarDbReaderHelper(commonWordRepository);
+    public CommonGrammarDbReaderManager(CommonGrammarRepository commonGrammarRepository) {
+        this.commonGrammarRepository = commonGrammarRepository;
+        commonGrammarDbReaderHelper = new CommonGrammarDbReaderHelper(commonGrammarRepository);
         initializeBackGroundServiceForFeedInitialGrammar();
     }
 

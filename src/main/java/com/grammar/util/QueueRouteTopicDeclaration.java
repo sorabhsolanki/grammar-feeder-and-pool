@@ -1,9 +1,12 @@
 package com.grammar.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +16,8 @@ import org.springframework.stereotype.Component;
 */
 @Component
 public class QueueRouteTopicDeclaration {
+
+    private static final Logger LOG = LoggerFactory.getLogger(QueueRouteTopicDeclaration.class);
 
     @Bean
     Queue queueForGrammarFeeder() {
